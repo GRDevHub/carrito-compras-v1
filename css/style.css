@@ -3,3 +3,82 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container{
+    /* border: 2px solid red; */
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 100px;
+}
+
+.productos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop{
+    width: 300px;
+    min-height: 30px;
+    border: 1px solid #acacac;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 15px -5px #000;
+}
+
+.fruta{
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fruta .name{
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.btn{
+    background-color: #3643b7;
+    border: none;
+    border-radius: 3px;
+    padding: .4rem;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.btn:hover{
+    background-color: #4d58b9;
+}
+
+.carrito{
+    margin-top: 1rem;
+    border: 1px solid #acacac;
+    box-shadow: 0 0 15px -5px #000;
+    border-radius: 10px;
+}
+
+.carrito__producto{
+    /* outline: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.carrito__canti{
+    background-color: #4d58b9;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
