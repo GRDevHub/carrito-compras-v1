@@ -11,7 +11,7 @@
 
 ## Código JavaScript
 ```js
-    const botones = document.querySelectorAll('.btn-primary');
+const botones = document.querySelectorAll('.btn-primary');
 const template = document.querySelector('#template');
 const contenedor = document.querySelector('#contenedor');
 
