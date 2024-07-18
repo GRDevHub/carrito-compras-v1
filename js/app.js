@@ -34,11 +34,11 @@ const addProductoCarrito = (producto) => {
         carrito[position].precio += parseInt(producto.precio);
         console.log("El producto ya existe en el carrito");
     }
-    mostrarCArrito();
+    mostrarCarrito();
 }                           
 
 // mostrar el carrito en la web
-const mostrarCArrito = () => {
+const mostrarCarrito = () => {
     console.log("mostrar el carrito en la web")
 }
 
