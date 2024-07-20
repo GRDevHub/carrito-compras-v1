@@ -6,7 +6,7 @@ const fragment = document.createDocumentFragment();
 
 
 // Carrito
-const carrito = [];
+let carrito = [];
 
 // Agregar producto carrito
 const addProducto = (e) => {
@@ -37,7 +37,7 @@ const addProductoCarrito = (producto) => {
     }else{
         carrito[position].cantidad++;
         // carrito[position].precio = parseInt(producto.precio);
-        console.log("El producto ya existe en el carrito");
+        // console.log("El producto ya existe en el carrito");
     }
     // LLamar a la funcion mostrarCarrito()
     mostrarCarrito();
@@ -70,7 +70,7 @@ const mostrarCarrito = () => {
 }
 
 const btnAumentar = (e) => {
-    carrito.forEach( item => {
+    carrito = carrito.map( item => {
         if(e.target.dataset.id === item.id){
             item.cantidad++;
         }
@@ -81,14 +81,16 @@ const btnAumentar = (e) => {
 }
 
 const btnDisminuir = (e) => {
-    carrito.filter( item => {
-        if(e.target.dataset.id === item.id && item.cantidad >= 1){
-            item.cantidad--;
-            if(item.cantidad === 0){
-                carrito.pop();
+    carrito = carrito.filter( item => {
+        if(e.target.dataset.id === item.id){
+            if(item.cantidad > 0){
+                item.cantidad--;
+                if(item.cantidad === 0) return;
+                return item;
             }
+        }else{
+            return item;
         }
-        return item;
     });
     mostrarCarrito();
 }
