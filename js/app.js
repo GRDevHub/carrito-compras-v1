@@ -67,6 +67,7 @@ const mostrarCarrito = () => {
     });
     // Agregar el fragment al contenedor fuera del bucle para evitar el reflow
     contenedor.appendChild(fragment);
+    mostrarFooter();
 }
 
 const btnAumentar = (e) => {
@@ -93,6 +94,19 @@ const btnDisminuir = (e) => {
         }
     });
     mostrarCarrito();
+}
+
+const mostrarFooter = () => {
+    footer.textContent = '';
+
+    const total = carrito.reduce((acc, current) => {
+        return acc + current.cantidad * current.precio;
+    }, 0);
+
+    const clone = templateFooter.content.cloneNode(true);
+    clone.querySelector('.lead span').textContent = total;
+
+    footer.appendChild(clone);
 }
 
 document.addEventListener('click', (e) => {
